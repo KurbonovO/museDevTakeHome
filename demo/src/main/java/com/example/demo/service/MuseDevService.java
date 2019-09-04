@@ -33,22 +33,69 @@ public class MuseDevService {
 
 			for (int i = 1; i < result.length; i++) {
 
-				if (result[i].contains("unicorn") || result[i].contains("FIXME") || result[i].contains("santa")
-						|| result[i].contains("cake")) {
+				// Bad design below see if I can make it more readable.
+
+				if (result[i].contains("unicorn")) {
 
 					EvaluatedStrings evaluatedStrings = new EvaluatedStrings();
 					evaluatedStrings.setFile(result[0]);
 					evaluatedStrings.setType("Distracting words");
-					evaluatedStrings.setMessage("The word '" + "' was used.");
+					evaluatedStrings.setMessage("The word 'unicorn' was used.");
 					evaluatedStrings.setLine(i);
 					evaluatedStringsList.add(evaluatedStrings);
 
-				} else if (result[i].contains("burp") || result[i].contains("meanie") || result[i].contains("TODO")) {
+				} else if (result[i].contains("FIXME")) {
+
+					EvaluatedStrings evaluatedStrings = new EvaluatedStrings();
+					evaluatedStrings.setFile(result[0]);
+					evaluatedStrings.setType("Distracting words");
+					evaluatedStrings.setMessage("The word 'FIXME' was used.");
+					evaluatedStrings.setLine(i);
+					evaluatedStringsList.add(evaluatedStrings);
+
+				} else if (result[i].contains("santa")) {
+
+					EvaluatedStrings evaluatedStrings = new EvaluatedStrings();
+					evaluatedStrings.setFile(result[0]);
+					evaluatedStrings.setType("Distracting words");
+					evaluatedStrings.setMessage("The word 'santa' was used.");
+					evaluatedStrings.setLine(i);
+					evaluatedStringsList.add(evaluatedStrings);
+
+				} else if (result[i].contains("cake")) {
+
+					EvaluatedStrings evaluatedStrings = new EvaluatedStrings();
+					evaluatedStrings.setFile(result[0]);
+					evaluatedStrings.setType("Distracting words");
+					evaluatedStrings.setMessage("The word 'cake' was used.");
+					evaluatedStrings.setLine(i);
+					evaluatedStringsList.add(evaluatedStrings);
+				}
+
+				if (result[i].contains("burp")) {
 
 					EvaluatedStrings evaluatedStrings = new EvaluatedStrings();
 					evaluatedStrings.setFile(result[0]);
 					evaluatedStrings.setType("Foul words");
-					evaluatedStrings.setMessage("The word '" + "' was used.");
+					evaluatedStrings.setMessage("The word 'burp' was used.");
+					evaluatedStrings.setLine(i);
+					evaluatedStringsList.add(evaluatedStrings);
+
+				} else if (result[i].contains("meanie")) {
+
+					EvaluatedStrings evaluatedStrings = new EvaluatedStrings();
+					evaluatedStrings.setFile(result[0]);
+					evaluatedStrings.setType("Foul words");
+					evaluatedStrings.setMessage("The word 'meanie' was used.");
+					evaluatedStrings.setLine(i);
+					evaluatedStringsList.add(evaluatedStrings);
+
+				} else if (result[i].contains("TODO")) {
+
+					EvaluatedStrings evaluatedStrings = new EvaluatedStrings();
+					evaluatedStrings.setFile(result[0]);
+					evaluatedStrings.setType("Foul words");
+					evaluatedStrings.setMessage("The word 'TODO' was used.");
 					evaluatedStrings.setLine(i);
 					evaluatedStringsList.add(evaluatedStrings);
 				}
